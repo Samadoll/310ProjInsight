@@ -1,3 +1,5 @@
+# This project is originally created by UBC CPSC 310, implemented by Jiawei and Joon Hur.
+
 # CPSC 310 D0 Repository
 
 This is the base repository for CPSC310 Deliverable 0. This is an individual deliverable. Please keep your repository private.
