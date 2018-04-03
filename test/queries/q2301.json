@@ -1,0 +1,43 @@
+{
+    "title": "Test Sort using courses_uuid",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_uuid",
+                "overAllAvg",
+                "countAvg"
+            ],
+            "ORDER": "courses_uuid",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_uuid"
+            ],
+            "APPLY": [
+                {
+                    "countAvg": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+            {"result":[{"courses_dept":"eece","courses_uuid":"10235","countAvg":1,"overAllAvg":98.75},{"courses_dept":"eece","courses_uuid":"10236","countAvg":1,"overAllAvg":98.75},{"courses_dept":"nurs","courses_uuid":"15343","countAvg":1,"overAllAvg":98.71},{"courses_dept":"nurs","courses_uuid":"15344","countAvg":1,"overAllAvg":98.71},{"courses_dept":"cnps","courses_uuid":"26777","countAvg":1,"overAllAvg":99.19},{"courses_dept":"epse","courses_uuid":"28943","countAvg":1,"overAllAvg":97.41},{"courses_dept":"epse","courses_uuid":"29255","countAvg":1,"overAllAvg":98.58},{"courses_dept":"epse","courses_uuid":"29256","countAvg":1,"overAllAvg":98.58},{"courses_dept":"math","courses_uuid":"32014","countAvg":1,"overAllAvg":97.25},{"courses_dept":"math","courses_uuid":"32015","countAvg":1,"overAllAvg":97.25},{"courses_dept":"epse","courses_uuid":"3228","countAvg":1,"overAllAvg":97.69},{"courses_dept":"epse","courses_uuid":"33779","countAvg":1,"overAllAvg":98.08},{"courses_dept":"epse","courses_uuid":"33780","countAvg":1,"overAllAvg":98.7},{"courses_dept":"epse","courses_uuid":"33781","countAvg":1,"overAllAvg":98.36},{"courses_dept":"epse","courses_uuid":"35870","countAvg":1,"overAllAvg":97.29},{"courses_dept":"epse","courses_uuid":"35871","countAvg":1,"overAllAvg":97.29},{"courses_dept":"epse","courses_uuid":"44816","countAvg":1,"overAllAvg":98.76},{"courses_dept":"epse","courses_uuid":"44817","countAvg":1,"overAllAvg":98.76},{"courses_dept":"crwr","courses_uuid":"46405","countAvg":1,"overAllAvg":98},{"courses_dept":"crwr","courses_uuid":"46412","countAvg":1,"overAllAvg":98},{"courses_dept":"epse","courses_uuid":"49677","countAvg":1,"overAllAvg":98.45},{"courses_dept":"epse","courses_uuid":"49678","countAvg":1,"overAllAvg":98.45},{"courses_dept":"educ","courses_uuid":"50495","countAvg":1,"overAllAvg":97.5},{"courses_dept":"math","courses_uuid":"5373","countAvg":1,"overAllAvg":99.78},{"courses_dept":"math","courses_uuid":"5374","countAvg":1,"overAllAvg":99.78},{"courses_dept":"epse","courses_uuid":"6320","countAvg":1,"overAllAvg":98.8},{"courses_dept":"spph","courses_uuid":"65069","countAvg":1,"overAllAvg":98.98},{"courses_dept":"spph","courses_uuid":"65070","countAvg":1,"overAllAvg":98.98},{"courses_dept":"math","courses_uuid":"73165","countAvg":1,"overAllAvg":97.48},{"courses_dept":"math","courses_uuid":"73166","countAvg":1,"overAllAvg":97.48},{"courses_dept":"math","courses_uuid":"73173","countAvg":1,"overAllAvg":97.09},{"courses_dept":"math","courses_uuid":"73174","countAvg":1,"overAllAvg":97.09},{"courses_dept":"nurs","courses_uuid":"73638","countAvg":1,"overAllAvg":98.21},{"courses_dept":"nurs","courses_uuid":"73639","countAvg":1,"overAllAvg":98.21},{"courses_dept":"nurs","courses_uuid":"73665","countAvg":1,"overAllAvg":97.53},{"courses_dept":"nurs","courses_uuid":"73666","countAvg":1,"overAllAvg":97.53},{"courses_dept":"epse","courses_uuid":"76309","countAvg":1,"overAllAvg":97.78},{"courses_dept":"epse","courses_uuid":"76311","countAvg":1,"overAllAvg":97.41},{"courses_dept":"epse","courses_uuid":"86962","countAvg":1,"overAllAvg":97.09},{"courses_dept":"epse","courses_uuid":"86963","countAvg":1,"overAllAvg":97.09},{"courses_dept":"epse","courses_uuid":"86966","countAvg":1,"overAllAvg":97.67},{"courses_dept":"cnps","courses_uuid":"87779","countAvg":1,"overAllAvg":97.47},{"courses_dept":"cnps","courses_uuid":"87780","countAvg":1,"overAllAvg":97.47},{"courses_dept":"nurs","courses_uuid":"88151","countAvg":1,"overAllAvg":98.5},{"courses_dept":"nurs","courses_uuid":"88152","countAvg":1,"overAllAvg":98.5},{"courses_dept":"nurs","courses_uuid":"96250","countAvg":1,"overAllAvg":98.58},{"courses_dept":"nurs","courses_uuid":"96251","countAvg":1,"overAllAvg":98.58},{"courses_dept":"nurs","courses_uuid":"96261","countAvg":1,"overAllAvg":97.33},{"courses_dept":"nurs","courses_uuid":"96262","countAvg":1,"overAllAvg":97.33}]}
+    }
+}

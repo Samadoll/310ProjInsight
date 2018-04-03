@@ -1,0 +1,51 @@
+{
+    "title": "Test rooms AND and OR 1",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "OR": [
+                        {
+                            "IS": {
+                                "rooms_fullname": "Allard Hall (LAW)"
+                            }
+                        },
+                        {
+                            "IS": {
+                                "rooms_fullname": "Buchanan"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "OR": [
+                        {
+                            "GT": {
+                                "rooms_seats": 100
+                            }
+                        },
+                        {
+                            "LT": {
+                                "rooms_seats": 20
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "rooms_type",
+                "rooms_seats"
+            ],
+            "ORDER": "rooms_name",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_name":"BUCH_A101","rooms_type":"Tiered Large Group","rooms_seats":275},{"rooms_name":"BUCH_A102","rooms_type":"Tiered Large Group","rooms_seats":150},{"rooms_name":"BUCH_A103","rooms_type":"Tiered Large Group","rooms_seats":131},{"rooms_name":"BUCH_A104","rooms_type":"Tiered Large Group","rooms_seats":150},{"rooms_name":"BUCH_A201","rooms_type":"Tiered Large Group","rooms_seats":181},{"rooms_name":"BUCH_A202","rooms_type":"Case Style","rooms_seats":108},{"rooms_name":"BUCH_A203","rooms_type":"Case Style","rooms_seats":108},{"rooms_name":"BUCH_B312","rooms_type":"Small Group","rooms_seats":18}]}
+    }
+}

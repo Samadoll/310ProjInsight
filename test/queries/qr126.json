@@ -1,0 +1,51 @@
+{
+    "title": "Test group rooms type without some furniture???",
+    "query": {
+        "WHERE": {
+            "NOT": {
+                "IS": {
+                    "rooms_furniture": "*Movable Chairs*"
+                }
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_type",
+                "countRooms",
+                "avgSeats"
+            ],
+            "ORDER": "avgSeats",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_type"
+            ],
+            "APPLY": [
+                {
+                    "countRooms": {
+                        "COUNT": "rooms_type"
+                    }
+                },
+                {
+                    "avgSeats": {
+                        "AVG": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result":[
+                {"rooms_type":"Small Group","countRooms":1,"avgSeats":23.68},
+                {"rooms_type":"Active Learning","countRooms":1,"avgSeats":34.4},
+                {"rooms_type":"Open Design General Purpose","countRooms":1,"avgSeats":49.72},
+                {"rooms_type":"Studio Lab","countRooms":1,"avgSeats":50},
+                {"rooms_type":"","countRooms":1,"avgSeats":60},
+                {"rooms_type":"Case Style","countRooms":1,"avgSeats":87.5},
+                {"rooms_type":"Tiered Large Group","countRooms":1,"avgSeats":187.05},
+                {"rooms_type":"TBD","countRooms":1,"avgSeats":232.25}]}
+    }
+}

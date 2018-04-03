@@ -1,0 +1,25 @@
+{
+    "title": "test wrong key after underline",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_aavg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"GT requires a nuber key"
+        }
+    }
+}

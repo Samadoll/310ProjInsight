@@ -1,0 +1,33 @@
+{
+    "title": "SELECT dept including a*b, avg WHERE avg > 97",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg":97
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "a*b"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "invalid value"
+        }
+    }
+}

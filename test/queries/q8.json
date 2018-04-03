@@ -1,0 +1,19 @@
+{
+    "title": "test wrong query information",
+    "query": {
+        "title": "SELECT dept, avg WHERE avg < 0",
+        "query": {},
+        "response": {
+            "code": 400,
+            "body": {
+                "result": {"error":"Query format is wrong"}
+            }
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"Query format is wrong"
+        }
+    }
+}

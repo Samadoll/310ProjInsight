@@ -1,0 +1,28 @@
+{
+    "title": "Test TRANSFORMATIONS, empty Apply",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": []
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps"},{"courses_dept":"crwr"},{"courses_dept":"educ"},{"courses_dept":"eece"},{"courses_dept":"epse"},{"courses_dept":"math"},{"courses_dept":"nurs"},{"courses_dept":"spph"}]}
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "title": "SELECT rooms given lat&lon, partial href",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_href": "*ALRD*"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_fullname",
+                "rooms_number",
+                "rooms_name"
+            ],
+            "ORDER": "rooms_number",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_fullname":"Allard Hall (LAW)","rooms_number":"105","rooms_name":"ALRD_105"},{"rooms_fullname":"Allard Hall (LAW)","rooms_number":"112","rooms_name":"ALRD_112"},{"rooms_fullname":"Allard Hall (LAW)","rooms_number":"113","rooms_name":"ALRD_113"},{"rooms_fullname":"Allard Hall (LAW)","rooms_number":"121","rooms_name":"ALRD_121"},{"rooms_fullname":"Allard Hall (LAW)","rooms_number":"B101","rooms_name":"ALRD_B101"}]}
+    }
+}

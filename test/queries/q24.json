@@ -1,0 +1,22 @@
+{
+    "title": "test keys, values, AND",
+    "query": {
+        "WHERE": {
+            "AND": []
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "Invalid query: AND should contain at least one condition"
+        }
+    }
+}

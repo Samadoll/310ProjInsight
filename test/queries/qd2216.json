@@ -1,0 +1,60 @@
+{
+    "title": "Test TRANSFORMATIONS, test ALL Aplly ",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overAllAvg",
+                "countAvg",
+                "sumPass",
+                "maxAvg",
+                "minAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "countAvg": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                },
+                {
+                    "sumPass": {
+                        "SUM": "courses_pass"
+                    }
+                },
+                {
+                    "maxAvg": {
+                        "MAX": "courses_avg"
+                    }
+                },
+                {
+                    "minAvg": {
+                        "MIN": "courses_avg"
+                    }
+                }
+
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","countAvg":2,"overAllAvg":98.04,"sumPass":46,"maxAvg":99.19,"minAvg":97.47},{"courses_dept":"crwr","countAvg":1,"overAllAvg":98,"sumPass":2,"maxAvg":98,"minAvg":98},{"courses_dept":"educ","countAvg":1,"overAllAvg":97.5,"sumPass":14,"maxAvg":97.5,"minAvg":97.5},{"courses_dept":"eece","countAvg":1,"overAllAvg":98.75,"sumPass":24,"maxAvg":98.75,"minAvg":98.75},{"courses_dept":"epse","countAvg":13,"overAllAvg":98.01,"sumPass":291,"maxAvg":98.8,"minAvg":97.09},{"courses_dept":"math","countAvg":4,"overAllAvg":97.9,"sumPass":90,"maxAvg":99.78,"minAvg":97.09},{"courses_dept":"nurs","countAvg":6,"overAllAvg":98.14,"sumPass":170,"maxAvg":98.71,"minAvg":97.33},{"courses_dept":"spph","countAvg":1,"overAllAvg":98.98,"sumPass":164,"maxAvg":98.98,"minAvg":98.98}]}
+    }
+}

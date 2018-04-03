@@ -1,0 +1,73 @@
+{
+    "title": "test many and's",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "AND": [
+                        {
+                            "LT": {
+                                "courses_avg":97
+                            }
+                        },
+                        {
+                            "GT": {
+                                "courses_avg":90
+                            }
+                        }
+                    ]
+                },
+                {
+                    "AND": [
+                        {
+                            "GT": {
+                                "courses_avg":94
+                            }
+                        },
+                        {
+                            "AND": [
+                                {
+                                    "GT": {
+                                        "courses_avg":96
+                                    }
+                                },
+                                {
+                                    "EQ": {
+                                        "courses_avg":96.11
+                                    }
+                                },
+                                {
+                                    "GT": {
+                                        "courses_avg":95
+                                    }
+                                },
+                                {
+                                    "GT": {
+                                        "courses_avg":94
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "adhe", "courses_id": "329", "courses_avg": 96.11 }
+            ]
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "title": "SELECT rooms given lat&lon, ERROR MORE THAN ONE DATASET",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "EQ": {
+                        "rooms_lat":49.2699
+                    }
+                },
+                {
+                    "EQ": {
+                        "rooms_lon":-123.25318
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_fullname",
+                "rooms_number",
+                "courses_avg",
+                "rooms_lat",
+                "rooms_lon"
+            ],
+            "ORDER": "rooms_number",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error": "Query is trying to query two datasets at the same time"}
+    }
+}

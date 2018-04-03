@@ -1,0 +1,22 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97, order object, order object, order should be in column",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dep",
+                "courses_avg"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["courses_avg", "courses_dep"]},
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error": "Order key needs to be included in columns"}
+    }
+}

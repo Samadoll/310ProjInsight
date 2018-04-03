@@ -1,0 +1,28 @@
+{
+    "title": "Test TRANSFORMATIONS, no APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overAllAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body":
+        {"error": "Transformations needs to contains both GROUP and APPLY"}
+    }
+}

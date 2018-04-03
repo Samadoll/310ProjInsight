@@ -1,0 +1,51 @@
+{
+    "title": "Test rooms AND and OR, test sort UP",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "AND": [
+                        {
+                            "LT": {
+                                "rooms_seats": 120
+                            }
+                        },
+                        {
+                            "GT": {
+                                "rooms_seats": 100
+                            }
+                        }
+                    ]
+                },
+                {
+                    "AND": [
+                        {
+                            "GT": {
+                                "rooms_seats": 10
+                            }
+                        },
+                        {
+                            "LT": {
+                                "rooms_seats": 30
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "rooms_type",
+                "rooms_seats"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["rooms_seats", "rooms_name", "rooms_type"]},
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_name":"FNH_20","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"IBLC_264","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"SOWK_122","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"SPPH_B136","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"WOOD_G57","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"WOOD_G65","rooms_type":"Small Group","rooms_seats":12},{"rooms_name":"PHRM_3116","rooms_type":"Small Group","rooms_seats":14},{"rooms_name":"SPPH_B138","rooms_type":"Small Group","rooms_seats":14},{"rooms_name":"WOOD_G44","rooms_type":"Small Group","rooms_seats":14},{"rooms_name":"ANGU_232","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"ANGU_332","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"ANGU_432","rooms_type":"Open Design General Purpose","rooms_seats":16},{"rooms_name":"BIOL_1503","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"BIOL_2519","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"IBLC_460","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"ORCH_3062","rooms_type":"Open Design General Purpose","rooms_seats":16},{"rooms_name":"ORCH_3068","rooms_type":"Open Design General Purpose","rooms_seats":16},{"rooms_name":"ORCH_3072","rooms_type":"Open Design General Purpose","rooms_seats":16},{"rooms_name":"ORCH_4062","rooms_type":"Active Learning","rooms_seats":16},{"rooms_name":"ORCH_4068","rooms_type":"Active Learning","rooms_seats":16},{"rooms_name":"SOWK_324","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"SOWK_326","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"SPPH_B112","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"WOOD_G66","rooms_type":"Small Group","rooms_seats":16},{"rooms_name":"BUCH_B312","rooms_type":"Small Group","rooms_seats":18},{"rooms_name":"FSC_1402","rooms_type":"Small Group","rooms_seats":18},{"rooms_name":"ALRD_112","rooms_type":"Open Design General Purpose","rooms_seats":20},{"rooms_name":"ALRD_113","rooms_type":"Open Design General Purpose","rooms_seats":20},{"rooms_name":"ANGU_339","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"AUDX_142","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"FSC_1615","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"FSC_1617","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"LASR_211","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"LASR_5C","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"ORCH_4072","rooms_type":"Active Learning","rooms_seats":20},{"rooms_name":"SCRF_1021","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"SCRF_1022","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"SCRF_1023","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"SCRF_1024","rooms_type":"Small Group","rooms_seats":20},{"rooms_name":"AUDX_157","rooms_type":"Small Group","rooms_seats":21},{"rooms_name":"GEOG_242","rooms_type":"Small Group","rooms_seats":21},{"rooms_name":"WOOD_B79","rooms_type":"Small Group","rooms_seats":21},{"rooms_name":"BUCH_B216","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_B316","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D209","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D214","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D306","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D315","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D319","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BUCH_D325","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"CEME_1210","rooms_type":"Small Group","rooms_seats":22},{"rooms_name":"BRKX_2367","rooms_type":"Open Design General Purpose","rooms_seats":24},{"rooms_name":"BUCH_B219","rooms_type":"Open Design General Purpose","rooms_seats":24},{"rooms_name":"BUCH_B319","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"BUCH_D216","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"BUCH_D228","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"FSC_1002","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"FSC_1611","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"IBLC_156","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"IBLC_157","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"IBLC_158","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"IBLC_191","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"MCML_358","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"PCOH_1008","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"PCOH_1009","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"PCOH_1011","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"PCOH_1215","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"PCOH_1302","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"SCRF_1020","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"SCRF_204A","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"SCRF_210","rooms_type":"Small Group","rooms_seats":24},{"rooms_name":"MATH_225","rooms_type":"Small Group","rooms_seats":25},{"rooms_name":"MGYM_206","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_3002","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_3004","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_3016","rooms_type":"Active Learning","rooms_seats":25},{"rooms_name":"ORCH_3052","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_3058","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_4002","rooms_type":"Active Learning","rooms_seats":25},{"rooms_name":"ORCH_4004","rooms_type":"Active Learning","rooms_seats":25},{"rooms_name":"ORCH_4016","rooms_type":"Active Learning","rooms_seats":25},{"rooms_name":"ORCH_4052","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ORCH_4058","rooms_type":"Open Design General Purpose","rooms_seats":25},{"rooms_name":"ANSO_202","rooms_type":"Small Group","rooms_seats":26},{"rooms_name":"BUCH_B142","rooms_type":"Open Design General Purpose","rooms_seats":26},{"rooms_name":"CEME_1206","rooms_type":"Small Group","rooms_seats":26},{"rooms_name":"FNH_320","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_106","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_108","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_110","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_306","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_308","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_310","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_406","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_408","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"SWNG_410","rooms_type":"Small Group","rooms_seats":27},{"rooms_name":"FNH_30","rooms_type":"Small Group","rooms_seats":28},{"rooms_name":"SPPH_143","rooms_type":"Small Group","rooms_seats":28},{"rooms_name":"SOWK_222","rooms_type":"Open Design General Purpose","rooms_seats":29},{"rooms_name":"SOWK_223","rooms_type":"Open Design General Purpose","rooms_seats":29},{"rooms_name":"WESB_201","rooms_type":"Tiered Large Group","rooms_seats":102},{"rooms_name":"MATX_1100","rooms_type":"Tiered Large Group","rooms_seats":106},{"rooms_name":"BUCH_A202","rooms_type":"Case Style","rooms_seats":108},{"rooms_name":"BUCH_A203","rooms_type":"Case Style","rooms_seats":108},{"rooms_name":"IBLC_261","rooms_type":"Open Design General Purpose","rooms_seats":112},{"rooms_name":"CHEM_D200","rooms_type":"Tiered Large Group","rooms_seats":114},{"rooms_name":"CHEM_D300","rooms_type":"Tiered Large Group","rooms_seats":114}]}
+    }
+}

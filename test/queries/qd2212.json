@@ -1,0 +1,41 @@
+{
+    "title": "Test TRANSFORMATIONS, test COUNT & AVG",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overAllAvg",
+                "countAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "countAvg": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","countAvg":2,"overAllAvg":98.04},{"courses_dept":"crwr","countAvg":1,"overAllAvg":98},{"courses_dept":"educ","countAvg":1,"overAllAvg":97.5},{"courses_dept":"eece","countAvg":1,"overAllAvg":98.75},{"courses_dept":"epse","countAvg":13,"overAllAvg":98.01},{"courses_dept":"math","countAvg":4,"overAllAvg":97.9},{"courses_dept":"nurs","countAvg":6,"overAllAvg":98.14},{"courses_dept":"spph","countAvg":1,"overAllAvg":98.98}]}
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "title": "test ORDER key not in COLUMNS",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 100
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_id",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"Order key needs to be included in columns"
+        }
+    }
+}

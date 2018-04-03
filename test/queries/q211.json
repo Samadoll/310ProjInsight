@@ -1,0 +1,37 @@
+{
+    "title": "test OR, EQ",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "GT": {
+                        "courses_avg":99
+                    }
+                },
+                {
+                    "EQ": {
+                        "courses_avg": 99.19
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "cnps", "courses_avg": 99.19 },
+                { "courses_dept": "math", "courses_avg": 99.78 },
+                { "courses_dept": "math", "courses_avg": 99.78 }
+            ]
+        }
+    }
+}

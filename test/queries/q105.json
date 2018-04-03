@@ -1,0 +1,22 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97, AND is an empty array",
+    "query": {
+        "WHERE": {
+            "AND": []
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "Query is wrong."
+        }
+    }
+}

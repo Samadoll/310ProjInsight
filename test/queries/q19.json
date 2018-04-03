@@ -1,0 +1,24 @@
+{
+    "title": "test Filter",
+    "query": {
+        "WHERE": {
+            "AB": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"Token \"[object Object]\" not supported"
+        }
+    }
+}

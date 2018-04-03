@@ -1,0 +1,36 @@
+{
+    "title": "test missing ORDER",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 97
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "cnps"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {"courses_dept":"cnps","courses_avg":99.19},
+                {"courses_dept":"cnps","courses_avg":97.47},
+                {"courses_dept":"cnps","courses_avg":97.47}
+            ]
+        }
+    }
+}

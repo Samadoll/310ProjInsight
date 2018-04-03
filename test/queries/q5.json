@@ -1,0 +1,24 @@
+{
+    "title": "test missing datasets",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "coursess_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"missing dataset(s) coursess"
+        }
+    }
+}

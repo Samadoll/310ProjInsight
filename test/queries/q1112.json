@@ -1,0 +1,23 @@
+{
+    "title": "SELECT specific uuid",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_uuid": "30263"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_uuid"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [{"courses_dept": "ba", "courses_id": "504", "courses_uuid":"30263"}]
+        }
+    }
+}

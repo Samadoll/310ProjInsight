@@ -1,0 +1,35 @@
+{
+    "title": "Test TRANSFORMATIONS, test MIN",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "minAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "minAvg": {
+                        "MIN": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","minAvg":97.47},{"courses_dept":"crwr","minAvg":98},{"courses_dept":"educ","minAvg":97.5},{"courses_dept":"eece","minAvg":98.75},{"courses_dept":"epse","minAvg":97.09},{"courses_dept":"math","minAvg":97.09},{"courses_dept":"nurs","minAvg":97.33},{"courses_dept":"spph","minAvg":98.98}]}
+    }
+}

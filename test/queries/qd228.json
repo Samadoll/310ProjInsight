@@ -1,0 +1,35 @@
+{
+    "title": "Test TRANSFORMATIONS, test MAX",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "maxAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "maxAvg": {
+                        "MAX": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","maxAvg":99.19},{"courses_dept":"crwr","maxAvg":98},{"courses_dept":"educ","maxAvg":97.5},{"courses_dept":"eece","maxAvg":98.75},{"courses_dept":"epse","maxAvg":98.8},{"courses_dept":"math","maxAvg":99.78},{"courses_dept":"nurs","maxAvg":98.71},{"courses_dept":"spph","maxAvg":98.98}]}
+    }
+}

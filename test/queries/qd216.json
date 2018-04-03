@@ -1,0 +1,23 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97, order object, no keys.",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": {"dir": "UP"},
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body":
+            {"error": "Option order invalid"}
+    }
+}

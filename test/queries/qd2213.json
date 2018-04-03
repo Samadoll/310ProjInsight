@@ -1,0 +1,43 @@
+{
+    "title": "Test TRANSFORMATIONS, test multi-groups",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "overAllAvg",
+                "countAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "APPLY": [
+                {
+                    "countAvg": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","courses_id":"574","countAvg":2,"overAllAvg":98.04},{"courses_dept":"crwr","courses_id":"599","countAvg":1,"overAllAvg":98},{"courses_dept":"educ","courses_id":"500","countAvg":1,"overAllAvg":97.5},{"courses_dept":"eece","courses_id":"541","countAvg":1,"overAllAvg":98.75},{"courses_dept":"epse","courses_id":"421","countAvg":4,"overAllAvg":97.94},{"courses_dept":"epse","courses_id":"449","countAvg":4,"overAllAvg":98.48},{"courses_dept":"epse","courses_id":"519","countAvg":1,"overAllAvg":98.45},{"courses_dept":"epse","courses_id":"534","countAvg":2,"overAllAvg":97.59},{"courses_dept":"epse","courses_id":"549","countAvg":1,"overAllAvg":97.69},{"courses_dept":"epse","courses_id":"596","countAvg":1,"overAllAvg":97.09},{"courses_dept":"epse","courses_id":"606","countAvg":1,"overAllAvg":97.67},{"courses_dept":"math","courses_id":"525","countAvg":1,"overAllAvg":97.25},{"courses_dept":"math","courses_id":"527","countAvg":1,"overAllAvg":99.78},{"courses_dept":"math","courses_id":"532","countAvg":1,"overAllAvg":97.48},{"courses_dept":"math","courses_id":"541","countAvg":1,"overAllAvg":97.09},{"courses_dept":"nurs","courses_id":"509","countAvg":2,"overAllAvg":98.46},{"courses_dept":"nurs","courses_id":"578","countAvg":3,"overAllAvg":98.2},{"courses_dept":"nurs","courses_id":"591","countAvg":1,"overAllAvg":97.33},{"courses_dept":"spph","courses_id":"300","countAvg":1,"overAllAvg":98.98}]}
+    }
+}

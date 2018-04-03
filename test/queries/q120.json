@@ -1,0 +1,28 @@
+{
+    "title": "SELECT dept, avg WHERE auditor > 20",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_audit":20
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "rhsc", "courses_avg": 86.89 },
+                { "courses_dept": "rhsc", "courses_avg": 88.79 },
+                { "courses_dept": "cpsc", "courses_avg": 90.53 }
+            ]
+        }
+    }
+}

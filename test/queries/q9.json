@@ -1,0 +1,20 @@
+{
+    "title": "test no COLUMNS",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"IOptions format is wrong"
+        }
+    }
+}

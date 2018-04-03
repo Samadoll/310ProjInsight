@@ -1,0 +1,34 @@
+{
+    "title": "Test TRANSFORMATIONS, test GROUP has the same key as APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overAllAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "overAllAvg"
+            ],
+            "APPLY": [
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error": "Group cannot contain apply keys"}
+    }
+}

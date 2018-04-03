@@ -1,0 +1,55 @@
+{
+    "title": "group rooms with room types, keys in GROUP but not in COLUMNS",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "LT": {
+                        "rooms_lat":49.2700
+                    }
+                },
+                {
+                    "GT": {
+                        "rooms_lon":-123.25319
+                    }
+                },
+                {
+                    "LT": {
+                        "rooms_lon":0
+                    }
+                },
+                {
+                    "GT": {
+                        "rooms_lat":0
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_type",
+                "sumSeats"
+            ],
+            "ORDER": {"dir": "UP", "keys": ["rooms_type", "sumSeats"]},
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_type",
+                "rooms_furniture"
+            ],
+            "APPLY": [
+                {
+                    "sumSeats": {
+                        "SUM": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_type":"Active Learning","sumSeats":16},{"rooms_type":"Active Learning","sumSeats":100},{"rooms_type":"Active Learning","sumSeats":156},{"rooms_type":"Case Style","sumSeats":537},{"rooms_type":"Open Design General Purpose","sumSeats":75},{"rooms_type":"Open Design General Purpose","sumSeats":173},{"rooms_type":"Open Design General Purpose","sumSeats":210},{"rooms_type":"Open Design General Purpose","sumSeats":1360},{"rooms_type":"Small Group","sumSeats":58},{"rooms_type":"Small Group","sumSeats":129},{"rooms_type":"Small Group","sumSeats":204},{"rooms_type":"Small Group","sumSeats":1660},{"rooms_type":"Studio Lab","sumSeats":120},{"rooms_type":"TBD","sumSeats":897},{"rooms_type":"Tiered Large Group","sumSeats":150},{"rooms_type":"Tiered Large Group","sumSeats":888},{"rooms_type":"Tiered Large Group","sumSeats":2716},{"rooms_type":"Tiered Large Group","sumSeats":4174}]}
+    }
+}

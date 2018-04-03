@@ -1,0 +1,61 @@
+{
+    "title": "test OR, complex enough?",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "OR": [
+                        {
+                            "GT": {
+                                "courses_avg":99
+                            }
+                        },
+                        {
+                            "EQ": {
+                                "courses_avg": 99.19
+                            }
+                        },
+                        {
+                            "GT": {
+                                "courses_audit": 10
+                            }
+                        }
+                    ]
+                },
+                {
+                    "OR": [
+                        {
+                            "LT": {
+                                "courses_avg":50
+                            }
+                        },
+                        {
+                            "EQ": {
+                                "courses_avg":60
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_avg":"isf"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "invalid value"
+        }
+    }
+}

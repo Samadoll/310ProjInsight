@@ -1,0 +1,16 @@
+{
+    "title": "test no OPTIONS",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"Query format is wrong"
+        }
+    }
+}

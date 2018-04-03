@@ -1,0 +1,23 @@
+{
+    "title": "Test rooms fullname is LAW",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_fullname": "Allard Hall (LAW)"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "rooms_type",
+                "rooms_seats"
+            ],
+            "ORDER": "rooms_seats",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_name":"ALRD_112","rooms_type":"Open Design General Purpose","rooms_seats":20},{"rooms_name":"ALRD_113","rooms_type":"Open Design General Purpose","rooms_seats":20},{"rooms_name":"ALRD_B101","rooms_type":"Open Design General Purpose","rooms_seats":44},{"rooms_name":"ALRD_121","rooms_type":"Case Style","rooms_seats":50},{"rooms_name":"ALRD_105","rooms_type":"Case Style","rooms_seats":94}]}
+    }
+}

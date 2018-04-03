@@ -1,0 +1,25 @@
+{
+    "title": "test invalid key",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_instructors_number": 10
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"courses_instructors_number is not a valid key"
+        }
+    }
+}

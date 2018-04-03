@@ -1,0 +1,22 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97, order object, invalid direction.",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": {"dir": "FLY", "keys": ["courses_avg", "courses_dept"]},
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error": "Order direction not valid"}
+    }
+}

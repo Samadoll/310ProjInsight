@@ -1,0 +1,40 @@
+{
+    "title": "SELECT dept, avg WHERE avg > 97, all keys, test AND, EQ and GT",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg":97
+                    }
+                },
+                {
+                    "EQ": {
+                        "courses_avg": 97.09
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg",
+                "courses_instructor",
+                "courses_title",
+                "courses_pass",
+                "courses_fail",
+                "courses_audit",
+                "courses_year",
+                "courses_uuid"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"epse","courses_id":"596","courses_avg":97.09,"courses_instructor":"kishor, nand","courses_title":"cor des ed res","courses_pass":11,"courses_fail":0,"courses_audit":0,"courses_year":2007,"courses_uuid":"86962"},{"courses_dept":"epse","courses_id":"596","courses_avg":97.09,"courses_instructor":"","courses_title":"cor des ed res","courses_pass":11,"courses_fail":0,"courses_audit":0,"courses_year":1900,"courses_uuid":"86963"},{"courses_dept":"math","courses_id":"541","courses_avg":97.09,"courses_instructor":"laba, izabella","courses_title":"harmonic anal i","courses_pass":11,"courses_fail":0,"courses_audit":0,"courses_year":2010,"courses_uuid":"73173"},{"courses_dept":"math","courses_id":"541","courses_avg":97.09,"courses_instructor":"","courses_title":"harmonic anal i","courses_pass":11,"courses_fail":0,"courses_audit":0,"courses_year":1900,"courses_uuid":"73174"}]}
+    }
+}

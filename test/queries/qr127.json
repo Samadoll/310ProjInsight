@@ -1,0 +1,50 @@
+{
+    "title": "Test rooms AND and OR, test sort XX, wrong direction",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "AND": [
+                        {
+                            "LT": {
+                                "rooms_seats": 120
+                            }
+                        },
+                        {
+                            "GT": {
+                                "rooms_seats": 100
+                            }
+                        }
+                    ]
+                },
+                {
+                    "AND": [
+                        {
+                            "GT": {
+                                "rooms_seats": 10
+                            }
+                        },
+                        {
+                            "LT": {
+                                "rooms_seats": 30
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_name",
+                "rooms_type",
+                "rooms_seats"
+            ],
+            "ORDER": {"dir": "XX", "keys": ["rooms_seats", "rooms_name", "rooms_type"]},
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error": "wrong direction."}
+    }
+}

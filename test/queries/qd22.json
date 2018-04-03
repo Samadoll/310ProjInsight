@@ -1,0 +1,35 @@
+{
+    "title": "Test TRANSFORMATIONS, test AVG",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overAllAvg"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "overAllAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"courses_dept":"cnps","overAllAvg":98.04},{"courses_dept":"crwr","overAllAvg":98},{"courses_dept":"educ","overAllAvg":97.5},{"courses_dept":"eece","overAllAvg":98.75},{"courses_dept":"epse","overAllAvg":98.01},{"courses_dept":"math","overAllAvg":97.9},{"courses_dept":"nurs","overAllAvg":98.14},{"courses_dept":"spph","overAllAvg":98.98}]}
+    }
+}

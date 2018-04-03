@@ -1,0 +1,32 @@
+{
+    "title": "SELECT dept not including *",
+    "query": {
+        "WHERE": {
+            "NOT": {
+                "IS": {
+                    "courses_dept": "*"
+                }
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_audit",
+                "courses_fail",
+                "courses_dept",
+                "courses_avg",
+                "courses_id",
+                "courses_instructor",
+                "courses_pass",
+                "courses_title",
+                "courses_year",
+                "courses_uuid"
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": []
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "query1": "simple query IS comparison for department with two columns and old order syntax",
+    "query2": "parse q1.json",
+    "query3": "I don't know what is that.",
+    "query4": "Empty Where"
+}

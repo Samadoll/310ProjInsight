@@ -1,0 +1,33 @@
+{
+    "title": "test GT/LT/EQ again",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "EQ": {
+                        "courses_avg": "fds"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "cnps"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error":"Invalid query: EQ value should be a number"
+        }
+    }
+}
